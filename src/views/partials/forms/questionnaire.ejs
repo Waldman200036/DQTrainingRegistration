@@ -1,0 +1,180 @@
+<style>
+  select {
+    width: 300px;
+  }
+
+  @media screen and (max-width: 568px) {
+    select text input{
+      width: 100%;
+    }
+  }
+  /* @media screen and (max-width: 568px) {
+     text {
+      width: 350px;
+    }
+  } */
+
+  .row {
+    text-align: left;
+  }
+
+  .instr {
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+
+.text-width {
+  width: 245px;
+}
+  /* .txt-short {
+    width: 100%;
+  } */
+
+  textarea {
+    width: 100%;
+    height: 25%;
+  }
+</style>
+<h4>
+  <!-- greeting -->
+  <p class="instr"><%=status.greeting %> </p>
+</h4>
+<br>
+<br>
+<br>
+<p class="instr">
+  <% for( let i = 0; i < status.instructions.length; i++ ) { %>
+  <%=status.instructions[i]  %>
+  <% } %>
+</p>
+<br>
+<br>
+<!--Questionnaire form-->
+<form class="form-group instr" action="questionnaire/postQuestionnaire/" method="POST">
+
+  <!-- First Name -->
+   <div class="row">
+    <div class="col-md-2 col-sm-3 text-left">
+      <label for="firstname">* First Name: </label>
+    </div>
+    <div class="col-md-2 col-sm-3">
+      <input class="text-width" name="firstname" id="firstname" required />
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-2 col-sm-3 text-left">
+      <label for="lastname">* Last Name:</label>
+    </div>
+    <div class="col-md-2 col-sm-3 text-left">
+      <input class="text-width"  name="lastname" id="lastname" required />
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-2 col-sm-3 text-left">
+      <label for="email:">* Email:</label>
+    </div>
+    <div class="col-md-2 col-sm-3 text-left">
+      <input class="text-width"  name="email" id="email" type="email" required />
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-2 col-sm-3 text-left">
+      <label for="phone">* Phone:</label>
+    </div>
+    <div class="col-md-2 col-sm-3 text-left">
+      <input class="text-width"  name="phone" id="phone" type="phone" required />
+    </div>
+  </div> 
+    <div class="row">
+      <div class="col-md-2 col-sm-3 text-left">
+        <label for="site">* Site:</label>
+      </div>
+      <div class="col-md-2 col-sm-3 text-left">
+        <select name="site" id="site" required>
+           <option value="">Please Choose...</option>
+          <option value="MTF">MTF</option>
+          <option value="Region">Region</option>
+          <option value="OTSG">OTSG</option>
+          <option value="DHA">DHA</option>
+        </select>
+      </div>
+    </div>
+        <div class="row">
+          <div class="col-md-2 col-sm-3 text-left">
+            <label for="role">* Role:</label>
+          </div>
+          <div class="col-md-2 col-sm-3 text-left">
+            <select name="role" id="role" required>
+               <option value="">Please Choose...</option>
+              <option value="DQ Manager">DQ Manager</option>
+              <option value="Alt DQ Manager">Alt DQ Manager</option>
+              <option value="UBO">UBO</option>
+              <option value="Coding / PAD">Coding / PAD</option>
+              <option value="MEPRS/Finance">MEPRS/Finance</option>
+              <option value="Information Management">Information Management</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+        </div>
+  <% var question=JSON.parse(questions) %>
+  <%  var event=JSON.parse(events) %>
+
+  <!-- <div class="row">
+    <div class="col-md-2  col-sm-3  text-left">
+      <label for="event">* Attended:</label>
+    </div>
+    <div class="col-m2-2 col-sm-3">
+      <p>Mon-Thurs (Any Days)
+M2 Course</p>
+
+
+    </div>
+  </div> -->
+
+  <% for( let i = 0; i < question.length; i++ ) { %> <h5>
+    <br>
+    <h5>
+      <label for="">
+        <p><%=question[i].question %></p>
+      </label>
+
+      <input type="hidden" name="question_<%=i  %>" id="question_<%=i  %>" value="<%=question[i].question %> ">
+      <input type="hidden" name="question_id_<%=i  %>" id="question_id_<%=i  %>" value="<%=question[i]._id %>">
+    </h5>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="input-group mb-3">
+          <% if (question[i].options.length > 1) { %>
+          <select class="form-select" name='answer_<%=i  %>' id='answer_<%=i  %>' required>
+            <option value="">Please Choose...</option>
+            <% for( let j = 0; j < question[i].options.length; j++ ) { %>
+            <option value="<%=question[i].options[j]  %>">
+              <%=question[i].options[j]  %></option>
+            <% } %>
+          </select>
+          <br>
+          <br>
+          <% } %>
+          <% if ((question[i].answerType == 'text')|| (question[i].answerType == 'optionText')) { %>
+          <textarea placeholder="<%=question[i].placeHolder %>" name="comment_<%=i  %>" id="comment_<%=i  %>" cols="75"
+            rows="5"></textarea>
+          <% } %>
+          <br>
+        </div>
+      </div>
+    </div>
+
+    <% } %>
+    <div class="row">
+      <div class="col-md-12">
+        <input name="timestamp" type="hidden" value=''>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <br>
+        <input class="btn btn-primary" type="submit" value="Submit">
+        <br>
+      </div>
+    </div>
+</form>

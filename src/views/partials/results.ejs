@@ -1,0 +1,278 @@
+<style>
+  select {
+    width: 300px;
+  }
+
+  @media screen and (max-width: 568px) {
+    select text input {
+      width: 100%;
+    }
+  }
+
+  /* @media screen and (max-width: 568px) {
+     text {
+      width: 350px;
+    }
+  } */
+
+  .row {
+    text-align: left;
+  }
+
+  .instr {
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+
+  .text-width {
+    width: 245px;
+  }
+
+  /* .txt-short {
+    width: 100%;
+  } */
+
+  textarea {
+    width: 100%;
+    height: 25%;
+  }
+</style>
+<h4>
+  <!-- greeting -->
+  <p class="instr"><%=status.greeting %> </p>
+</h4>
+<br>
+<br>
+<br>
+<h2 class="instr">
+  <% for( let i = 0; i < status.instructions.length; i++ ) { %>
+  <%=status.instructions[i]  %>
+  <% } %>
+</h2>
+<br>
+<br>
+<!--Results form-->
+<div class="instr">
+  <% var questionanswer=JSON.parse(questionsanswers) %>
+
+
+
+  <% for( let i = 0; i < questionanswer.length; i++ ) { %>
+  <br>
+
+  <% var date = new Date(+questionanswer[i].timestamp) %>
+  <p>
+
+    <%=date.toDateString({timeZone: "America/chicago"}) + ' ' + date.toLocaleTimeString("en-US",{timeZone:'America/chicago'}) %>
+  </p>
+  <hr>
+  <!-- First Name -->
+  <div>
+    <div class="row">
+      <div class="col-md-2 col-md-8 text-left">
+        <label for="firstname">Name: </label>
+      </div>
+      <div class="col-md-6 col-md-8 text-left">
+        <%=questionanswer[i].firstname%> <%=questionanswer[i].lastname  %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-2 col-md-8 text-left">
+        <label for="email:">Email:</label>
+      </div>
+      <div class="col-md-2 col-md-8 text-left">
+        <p><%=questionanswer[i].email  %> </p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-2 col-md-8 text-left">
+        <label for="phone">Phone:</label>
+      </div>
+      <div class="col-md-2 col-md-8 text-left">
+        <p><%=questionanswer[i].phone  %> </p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-2 col-md-8 text-left">
+        <label for="site">Site:</label>
+      </div>
+      <div class="col-md-2 col-md-8 text-left">
+        <p><%=questionanswer[i].site  %> </p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-2 col-md-8 text-left">
+        <label for="role">Role:</label>
+      </div>
+      <div class="col-md-2 col-md-8 text-left">
+        <p><%=questionanswer[i].role  %> </p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-2 col-md-8 text-left">
+        <label for="phone">Event:</label>
+      </div>
+      <div class="col-md-6 col-md-8 text-left">
+        <p>Mon-Thurs (Any Days) M2 Course</p>
+        <br>
+      </div>
+    </div>
+    <!-- item 1 -->
+    <div class="row">
+      <div class="col-md-2 col-md-8 text-left">
+        <label for="">Item 1:</label>
+      </div>
+      <div class="col-md-6 col-md-8 text-left">
+        <p><%=questionanswer[i].question_0  %> </p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-2 col-md-8 text-left">
+        <label for="">Response:</label>
+      </div>
+      <div class="col-md-6 col-md-8 text-left">
+        <p><%=questionanswer[i].answer_0  %> - <%=questionanswer[i].comment_0  %> </p>
+        <br>
+      </div>
+    </div>
+    <!-- item 2 -->
+    <div class="row">
+      <div class="col-md-2 col-md-8 text-left">
+        <label for="">Item 2:</label>
+      </div>
+      <div class="col-md-6 col-md-8 text-left">
+        <p><%=questionanswer[i].question_1  %> </p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-2 col-md-8 text-left">
+        <label for="">Response:</label>
+      </div>
+      <div class="col-md-6 col-md-8 text-left">
+        <p><%=questionanswer[i].answer_1  %> - <%=questionanswer[i].comment_1  %> </p>
+        <br>
+      </div>
+    </div>
+    <!-- item 3 -->
+    <div class="row">
+      <div class="col-md-2 col-md-8 text-left">
+        <label for="">Item 3:</label>
+      </div>
+      <div class="col-md-6 col-md-8 text-left">
+        <p><%=questionanswer[i].question_2  %> </p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-2 col-md-8 text-left">
+        <label for="">Response:</label>
+      </div>
+      <div class="col-md-6 col-md-8 text-left">
+        <p><%=questionanswer[i].answer_2  %> - <%=questionanswer[i].comment_2  %> </p>
+        <br>
+      </div>
+    </div>
+    <!-- item 4 -->
+    <div class="row">
+      <div class="col-md-2 col-md-8 text-left">
+        <label for="">Item 4:</label>
+      </div>
+      <div class="col-md-6 col-md-8 text-left">
+        <p><%=questionanswer[i].question_3  %> </p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-2 col-md-8 text-left">
+        <label for="">Response:</label>
+      </div>
+      <div class="col-md-6 col-md-8 text-left">
+        <p><%=questionanswer[i].answer_3  %> - <%=questionanswer[i].comment_3  %> </p>
+        <br>
+      </div>
+    </div>
+    <!-- item 5 -->
+    <div class="row">
+      <div class="col-md-2 col-md-8 text-left">
+        <label for="">Item 5:</label>
+      </div>
+      <div class="col-md-6 col-md-8 text-left">
+        <p><%=questionanswer[i].question_4  %> </p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-2 col-md-8 text-left">
+        <label for="">Response:</label>
+      </div>
+      <div class="col-md-6 col-md-8 text-left">
+        <p><%=questionanswer[i].comment_4  %> </p>
+        <br>
+      </div>
+    </div>
+    <!-- item 6 -->
+    <div class="row">
+      <div class="col-md-2 col-md-8 text-left">
+        <label for="">Item 6:</label>
+      </div>
+      <div class="col-md-6 col-md-8 text-left">
+        <p><%=questionanswer[i].question_5  %> </p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-2 col-md-8 text-left">
+        <label for="">Response:</label>
+      </div>
+      <div class="col-md-6 col-md-8 text-left">
+        <p><%=questionanswer[i].comment_5  %> </p>
+        <br>
+      </div>
+    </div>
+    <!-- item 7 -->
+    <div class="row">
+      <div class="col-md-2 col-md-8 text-left">
+        <label for="">Item 7:</label>
+      </div>
+      <div class="col-md-6 col-md-8 text-left">
+        <p><%=questionanswer[i].question_6  %> </p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-2 col-md-8 text-left">
+        <label for="">Response:</label>
+      </div>
+      <div class="col-md-6 col-md-8 text-left">
+        <p><%=questionanswer[i].comment_6  %> </p>
+        <br>
+      </div>
+    </div>
+    <!-- item 8 -->
+    <div class="row">
+      <div class="col-md-2 col-md-8 text-left">
+        <label for="">Item 8:</label>
+      </div>
+      <div class="col-md-6 col-md-8 text-left">
+        <p><%=questionanswer[i].question_7  %> </p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-2 col-md-8 text-left">
+        <label for="">Response:</label>
+      </div>
+      <div class="col-md-6 col-md-8 text-left">
+        <p><%=questionanswer[i].comment_7  %> </p>
+        <br>
+      </div>
+    </div>
+    <% } %>
+    <div class="row">
+      <div class="col-md-22">
+        <input name="timestamp" type="hidden" value=<%=Date.now() %>>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-22">
+        <!-- <br>
+      <input class="btn btn-primary" type="submit" value="Submit">
+      <br> -->
+      </div>
+    </div>
+  </div>
+</div>

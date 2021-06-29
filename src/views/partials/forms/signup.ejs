@@ -1,0 +1,153 @@
+<style>
+  .spanRed {
+    color: red;
+    width: 194px;
+    text-align: left;
+  }
+
+  @media only screen and (max-width:800px) {
+
+    /* For tablets: */
+    input {
+      float: right;
+      padding-left: 5px;
+      margin-left: 5px;
+    }
+
+    select {
+      float: right;
+      padding-left: 5px;
+      margin-left: 5px;
+    }
+  }
+
+  label {
+    float: left;
+  }
+  }
+</style>
+<div style="padding-bottom: 3px;">
+  <ul style="margin-right: 25px;">
+    <h4>
+      <p>
+        Sign up here to access the administrative features:
+      </p>
+    </h4>
+  </ul>
+
+  <form class="form-group"
+    oninput='cpassword.setCustomValidity(password.value != cpassword.value ? "Passwords do not match.":"");'
+    name="registrationForm" action="/auth/signup" method="POST">
+    <!-- Start -->
+    <div class="row">
+      <div class="col-md-3 col-sm-3 text-right">
+        <br>
+        <hr>
+        <h3 style="text-align:left">First Sign Up Here:</h3>
+        <br>
+        <br>
+      </div>
+      <div class="col-md-2 col-sm-3">
+
+
+      </div>
+      <div class="col-md-2 col-sm-3"></div>
+    </div>
+    <!-- First Name -->
+    <!-- <div class="row">
+      <div class="col-md-2 col-sm-3 text-right">
+        <label for="firstname">* First Name: </label>
+      </div>
+      <div class="col-md-2 col-sm-3">
+        <input name="firstname" id="firstname" required />
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-2 col-sm-3 text-right">
+        <label for="lastname">* Last Name:</label>
+
+      </div>
+      <div class="col-md-2 col-sm-3 text-center">
+        <input name="lastname" id="lastname" required />
+      </div>
+    </div> -->
+    <!-- <div class="row">
+      <div class="col-md-2 col-sm-3  text-right">
+        <label for="Organization">Organization:</label>
+      </div>
+      <div class="col-md-2 col-sm-3 text-center">
+        <input class="txt-long" name="Organization" id="Organization" />
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-2  col-sm-3  text-right">
+        <label for="branch">* Branch:</label>
+      </div>
+      <div class="col-m2-2 col-sm-3">
+        <select id="branch-select" name="branch" required>
+          <option value="">-- Please choose --</option>
+          <option value="ARMY">ARMY</option>
+          <option value="AIR FORCE">AIR FORCE</option>
+          <option value="NAVY">NAVY</option>
+          <option value="NCR">NCR</option>
+          <option value="N/A">N/A</option>
+        </select>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-2 col-sm-3 text-right">
+        <label for="facility:">Facility:</label>
+      </div>
+      <div class="col-md-2 col-sm-3 text-center">
+        <input class="txt-long" name="facility" id="facility" />
+      </div>
+    </div> -->
+    <div class="row">
+      <div class="col-md-2 col-sm-3 text-right">
+        <label for="email:">* Email:</label>
+      </div>
+      <div class="col-md-2 col-sm-3 text-center">
+        <input class="txt-long" name="email" id="email" type="email" required />
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-2 col-sm-3 text-right">
+        <label for="password">* Password:</label>
+      </div>
+      <div class="col-md-2 col-sm-3 text-center">
+        <input name="password" id="password" type="password" required />
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-2 col-sm-3 text-right">
+        <label for="cpassword:">* Confirm Password:</label>
+      </div>
+      <div class="col-md-2 col-sm-3 text-center">
+        <input name="cpassword" id="cpassword" type="password" required />
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-2 col-sm-3 text-right">
+        <!-- <label for="phone">Phone:</label> -->
+      </div>
+      <div class="col-md-2 col-sm-3 text-center">
+        <!-- <input name="phone" id="phone" type="phone" required /> -->
+        <% if (status === 'failed') { %>
+        <p class="spanRed"><%=message %> </p>
+        <% } %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-2 text-left">
+        <div class="col-md-3">
+          <input name="timestamp" type="hidden" value=<%=timestamp %>>
+        </div>
+      </div>
+      <div class="col-md-2 text-left">
+        <br>
+        <input class="btn btn-primary" type="submit" value="Sign Up" />
+      </div>
+    </div>
+</div>
+
+</form>

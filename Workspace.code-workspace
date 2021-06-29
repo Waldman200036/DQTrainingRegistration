@@ -1,0 +1,25 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../EDQValuesAndBenefits_Rest"
+		},
+		{
+			"path": "../EDQValuesAndBenefits_Proxy"
+		}
+	],
+	"settings": {
+		"cSpell.words": [
+			"Alexa",
+			"EDQINFO",
+			"Gaspard",
+			"apikey",
+			"documnent",
+			"ical",
+			"signin",
+			"upsert"
+		]
+	}
+}

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <title><%=title %> </title>
+  <meta name="generator" content="Bootply" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet">
+  <!--[if lt IE 9]>
+			<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+  <link href="css/styles.css" rel="stylesheet">
+</head>
+
+<body>
+  <header class="navbar navbar-bright navbar-fixed-top" role="banner">
+    <div class="container">
+      <div class="navbar-header">
+        <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a href="/" class="navbar-brand">HOME</a>
+      </div>
+      <nav class="collapse navbar-collapse" role="navigation">
+        <ul class="nav navbar-nav">
+          <%for(let i=0; i<nav.length;i++) {%>
+          <li>
+            <a href="<%=nav[i].link%>"><%=nav[i].title%></a>
+          </li>
+          <%}%>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<div id="masthead">  
+  <div class="container">
+    <div class="row">
+      <div class="col-md-7">
+        <h1><%=title %>
+          <p class="lead"></p>
+          </h1>
+    </div>
+    <div class="col-md-5">
+
+      <div class="well well-lg">
+        <div class="row">
+          <div class="col-sm-12" style="text-align: center;">
+            <img src="css/images/dha_medicine.jpg" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    </div><!-- /cont -->
+
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="top-spacer"> </div>
+        </div>
+      </div>
+    </div><!-- /cont -->
+
+    </div>
+
+
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="panel">
+            <div class="panel-body">
+              <!--/registrar-->
+              <div style="padding-bottom: 3px;">
+                <br>
+                <h5> Thank you for taking the assessment!</h5>
+                <br>
+                <h4> Here is your score:</h4>
+                <h3><%=status.score %> </h3>
+                <br>
+                <h4><%=status.title%></h4>
+                <%for(let i=0;i<status.msgs.length;i++){%>
+                <%=status.msgs[i]%>
+                <br>
+                <% } %>
+                <br>
+                <!-- <p>(Developed from materials downloaded on 10/9/2007 from <a href="http://sarbc.org/ciss8.htlm"></a>  where it was
+                  adapted from The Freudenberger Burnout Scale.)</p>
+                <br> -->
+                <!-- <p>Don’t let a high total score alarm you, but pay attention to it and be sure to reach out to your
+                  supervisors, friends, and any medical/mental health professionals if you are feeling overwhelmed.
+                  The good news is that Burnout is reversible, no matter how far along it is.</p> -->
+                <br>
+                <h4>Resources are available at:</h4>
+                <p><a href="https://en.wikipedia.org/wiki/Occupational_burnout">Occupational burnout - Wikipedia</a></p>
+                <p><a
+                    href="https://www.inc.com/jessica-stillman/the-12-stages-of-burnout-according-to-psychologist.html">The
+                    12 Stages of Burnout, According to Psychologists | Inc.com</a>
+                </p>
+                <p><a href="https://www.sciencedirect.com/science/article/pii/S2213058615300188">Latent burnout
+                    profiles: A new approach to understanding the burnout experience</a></p>
+
+              </div>
+              <hr>
+
+
+
+            </div>
+          </div>
+
+
+
+        </div>
+        <!--/col-12-->
+      </div>
+    </div>
+
+
+    <hr>
+
+    <div class="container" id="footer">
+      <div class="row">
+        <div class="col col-sm-12">
+
+          <h1>Follow Us</h1>
+          <div class="btn-group">
+            <!-- <a class="btn btn-twitter btn-lg" href="#"><i class="icon-twitter icon-large"></i> Twitter</a> -->
+            <a class="btn btn-facebook btn-lg" href="https://www.facebook.com/DefenseHealthAgency/live"><i
+                class="icon-facebook icon-large"></i> Facebook</a>
+            <!-- <a class="btn btn-google-plus btn-lg" href="#"><i class="icon-google-plus icon-large"></i> Google+</a> -->
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <hr>
+
+    <hr>
+
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-6">
+            <ul class="list-inline">
+              <li><i class="icon-facebook icon-2x"></i></li>
+              <!--               <li><i class="icon-twitter icon-2x"></i></li>
+              <li><i class="icon-google-plus icon-2x"></i></li>
+              <li><i class="icon-pinterest icon-2x"></i></li> -->
+            </ul>
+
+          </div>
+          <div class="col-sm-6">
+            <p class="pull-right">Built with <i class="icon-heart-empty"></i> at <a
+                href="http://www.bootply.com">Bootply</a></p>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- script references -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+</body>
+
+</html>

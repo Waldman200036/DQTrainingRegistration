@@ -1,0 +1,54 @@
+[
+  {
+    "_id": "5f5a47db09871d579a98a5ba",
+    "question": "The course was the right length.",
+    "options": [
+      "Strongly Agree",
+      "Agree",
+      "Slightly Agree",
+      "Slightly Disagree",
+      "Disagree",
+      "Strongly Disagree",
+      "Not Applicable"
+    ]
+  },
+  {
+    "_id": "5f5a49f79563803f600c24fc",
+    "question": "The course was the right difficulty level.",
+    "options": [
+      "Strongly Agree",
+      "Agree",
+      "Slightly Agree",
+      "Slightly Disagree",
+      "Disagree",
+      "Strongly Disagree",
+      "Not Applicable"
+    ]
+  },
+  {
+    "_id": "5f5a4a859563803f600c24fd",
+    "question": "The objectives met my expectations for this course.",
+    "options": [
+      "Strongly Agree",
+      "Agree",
+      "Slightly Agree",
+      "Slightly Disagree",
+      "Disagree",
+      "Strongly Disagree",
+      "Not Applicable"
+    ]
+  },
+  {
+    "_id": "5f5a4aba9563803f600c24fe",
+    "question": "The course thoroughly covered all of the objectives.",
+    "options": [
+      "Strongly Agree",
+      "Agree",
+      "Slightly Agree",
+      "Slightly Disagree",
+      "Disagree",
+      "Strongly Disagree",
+      "Not Applicable"
+    ]
+  }
+]

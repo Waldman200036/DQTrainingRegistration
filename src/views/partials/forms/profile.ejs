@@ -1,0 +1,115 @@
+<% var profile = JSON.parse(result) %> 
+<form class="form-group"
+  oninput='cpassword.setCustomValidity(password.value != cpassword.value ? "Passwords do not match.":"");'
+  name="profileForm" action="profile" method="POST">
+  <!-- Start -->
+  <div class="row">
+    <div class="col-md-3 col-sm-3 text-right">
+      <br>
+      <hr>
+      <h3 style="text-align:left">Complete your profile:</h3>
+      <br>
+      <br>
+    </div>
+    <div class="col-md-2 col-sm-3">
+
+
+    </div>
+    <div class="col-md-2 col-sm-3"></div>
+  </div>
+  <!-- First Name -->
+  <div class="row">
+    <div class="col-md-2 col-sm-3 text-right">
+      <label for="firstname">* First Name: </label>
+    </div>
+    <div class="col-md-2 col-sm-3">
+      <input name="firstname" id="firstname" value="<%=profile.firstname  %> " required />
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-2 col-sm-3 text-right">
+      <label for="lastname">* Last Name:</label>
+
+    </div>
+    <div class="col-md-2 col-sm-3 text-center">
+      <input value="<%=profile.lastname  %>" name="lastname" id="lastname" required />
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-2 col-sm-3  text-right">
+      <label for="Organization">Organization:</label>
+    </div>
+    <div class="col-md-2 col-sm-3 text-center">
+      <input class="txt-long" value="<%=profile.Organization %>"  name=" Organization" id="Organization" />
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-2  col-sm-3  text-right">
+      <label for="branch">* Branch:</label>
+    </div>
+    <div class="col-m2-2 col-sm-3">
+      <select id="branch-select" selected="<%=profile.branch %>" name="branch"  value= required>
+        <option value="">-- Please choose --</option>
+        <option value="ARMY">ARMY</option>
+        <option value="AIR FORCE">AIR FORCE</option>
+        <option value="NAVY">NAVY</option>
+        <option value="NCR">NCR</option>
+        <option value="N/A">N/A</option>
+      </select>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-2 col-sm-3 text-right">
+      <label for="facility:">Facility:</label>
+    </div>
+    <div class="col-md-2 col-sm-3 text-center">
+      <input value="<%=profile.facility  %> " class="txt-long" name="facility" id="facility" />
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-2 col-sm-3 text-right">
+      <label for="email:">* Email:</label>
+    </div>
+    <div class="col-md-2 col-sm-3 text-center">
+      <input value="<%=profile.email  %> " class="txt-long" name="email" id="email" type="email" required />
+    </div>
+  </div>
+  <!-- <div class="row">
+    <div class="col-md-2 col-sm-3 text-right">
+      <label for="password">* Password:</label>
+    </div>
+    <div class="col-md-2 col-sm-3 text-center">
+      <input name="Password" id="password" type="password" required />
+    </div>
+  </div> -->
+  <!-- <div class="row">
+    <div class="col-md-2 col-sm-3 text-right">
+      <label for="cpassword:">* Confirm Password:</label>
+    </div>
+    <div class="col-md-2 col-sm-3 text-center">
+      <input name="cPassword" id="cpassword" type="password" required />
+    </div>
+  </div> -->
+  <div class="row">
+    <div class="col-md-2 col-sm-3 text-right">
+      <label for="phone">Phone:</label>
+    </div>
+    <div class="col-md-2 col-sm-3 text-center">
+      <input name="phone" value="<%=profile.phone  %> " id="phone" type="phone" required />
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-2 text-left">
+      <div class="col-md-3">
+        <input name="timestamp" type="hidden" value=<%=timestamp %>>
+      <input class="btn btn-primary" type="submit" value="Submit" />        
+      </div>
+    </div>
+    <div class="col-md-2 text-left">
+      <br>
+      <input class="btn btn-primary" type="submit" value="skip" />
+    </div>
+  </div>
+  </div>
+
+</form>
